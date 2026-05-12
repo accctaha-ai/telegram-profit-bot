@@ -27,7 +27,7 @@ def flush(login):
         return
 
     first = trades[0]
-    total_profit = sum(float(t["profit"]) for t in trades)
+    total_profit = sum(float(t.get("profit") or 0) for t in trades)
 
     text = f"""🚨 High Profit Alert 🚨
 
